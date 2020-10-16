@@ -1,0 +1,18 @@
+<div data-controller="nested-fields-stimulus" class="nested-fields-stimulus mb-4">
+  <%= link_to "Add Technology", "#", data: {
+    target: "nested-fields-stimulus.addButton",
+    action: "nested-fields-stimulus#addAssociation"
+  } %>
+
+  <template data-target='nested-fields-stimulus.template'>
+    <%= form.fields_for :nested_objects, :example_object, child_index: 'TEMPLATE_RECORD' do |builder| %>
+      <%= render 'field_partial',  builder: builder %>
+    <%- end -%>
+  </template>
+
+<div data-target="nested-fields-stimulus.addLocation">
+  <%= form.fields_for :nested_objects do |builder| %>
+    <%= render 'field_partial',  builder: builder %>
+  <%- end -%>
+</div>
+</div>

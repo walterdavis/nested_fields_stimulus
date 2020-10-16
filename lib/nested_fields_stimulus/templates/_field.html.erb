@@ -1,0 +1,9 @@
+<div class="nested-fields-stimulus">
+  <%# your fields here, prefixed with builder. %>
+  <%= use.hidden_field :id %>
+  <%# use.hidden_field :_destroy %>
+  <button type="button"
+  data-action="click->nested-fields-stimulus#removeAssociation">
+  &times;
+</button>
+</div>
