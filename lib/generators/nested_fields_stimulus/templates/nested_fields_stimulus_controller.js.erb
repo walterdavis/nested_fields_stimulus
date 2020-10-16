@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  <%- if Rails.version.split('.').first.to_i > 5 -%>
+  <%- if rails_major > 5 -%>
   static targets = ["addButton", "template", "addLocation"]
   <%- else -%>
   static get targets(){
