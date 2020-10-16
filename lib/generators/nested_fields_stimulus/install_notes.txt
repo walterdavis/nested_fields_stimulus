@@ -1,0 +1,1 @@
+If the app doesn't use Yarn, download the latest stimulus from https://unpkg.com/stimulus/dist/stimulus.umd.js and stash it in vendor

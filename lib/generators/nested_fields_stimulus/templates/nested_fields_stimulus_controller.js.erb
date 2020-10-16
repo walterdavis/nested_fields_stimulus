@@ -1,11 +1,13 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
+  <%- if Rails.version.split('.').first.to_i > 5 -%>
   static targets = ["addButton", "template", "addLocation"]
-
-  connect() {
-    // console.log(this.element)
+  <%- else -%>
+  static get targets(){
+    ["addButton", "template", "addLocation"]
   }
+  <%- end -%>
 
   addAssociation(event) {
     event.preventDefault();

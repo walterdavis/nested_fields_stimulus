@@ -13,6 +13,6 @@ export default class extends Controller {
     event.preventDefault();
     var item = event.target.closest('.nested-fields-stimulus');
     item.querySelector('input[name*='_destroy']').value = 1;
-    item.style = 'display: none !important';
+    item.style = 'display: none';
   }
 }
