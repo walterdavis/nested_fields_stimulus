@@ -18,9 +18,14 @@ Or install it yourself as:
 
     $ gem install nested_fields_stimulus
 
+To install the Stimulus controller (and Stimulus itself, if you haven't already):
+
+    $ rails generate nested_fields_stimulus:install
+
 ## Usage
 
 Your application must be set up with `accepts_nested_attributes_for [:your_association]` in the model, `[your_association]_attributes` in your Strong Parameters declaration, and `fields_for` in your form. With those requirements taken care of, this gem will make it easy to add an "Add Another" button to inject a new nested form, and a one-click delete button for each nested form.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
