@@ -16,7 +16,7 @@ module NestedFieldsStimulus
       if stimulus_ready?
         system 'yarn add stimulus'
         system 'bin/rails webpacker:install:stimulus'
-        inject_into_file 'app/javascript/packs/application.js', STIM, before: /\n\s*import "controllers"/
+        inject_into_file 'app/javascript/packs/application.js', STIM, before: /\nimport "controllers"/
       else
         inject_into_file 'app/views/layouts/application.html.erb',
                          "\n    <script src=\"https://unpkg.com/stimulus/dist/stimulus.umd.js\"></script>",
@@ -32,7 +32,8 @@ module NestedFieldsStimulus
       major > 5 || (major ==  5 && minor == 2)
     end
     
-    STIM = <<~"JS"
+    STIM = <<~JS
+
       import { Application } from "stimulus"
       import { definitionsFromContext } from "stimulus/webpack-helpers"
 
