@@ -14,8 +14,8 @@ module NestedFieldsStimulus
     
     def install_stimulus
       if stimulus_ready?
-        system 'yarn add stimulus'
-        system 'bin/rails webpacker:install:stimulus'
+        run 'yarn add stimulus'
+        run 'rake webpacker:install:stimulus'
         inject_into_file 'app/javascript/packs/application.js', STIM, before: /\nimport "controllers"/
       else
         inject_into_file 'app/views/layouts/application.html.erb',
